@@ -1,0 +1,85 @@
+<h1>
+  {{ title }}
+</h1>
+
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title">Modal title</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>One fine body&hellip;</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Close</button>
+    <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">OK</button>
+
+  </div>
+</ng-template>
+
+<button class="btn btn-lg btn-outline-primary" (click)="open(content)">CLICK ME..</button>
+
+<hr>
+
+<pre>{{closeResult}}</pre>
+<button type="button" class="btn btn-outline-secondary mr-2" placement="top"
+        ngbPopover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." popoverTitle="Popover on top">
+  Popover on top
+</button>
+
+<button type="button" class="btn btn-outline-secondary mr-2" placement="right"
+        ngbPopover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." popoverTitle="Popover on right">
+  Popover on right
+</button>
+
+<button type="button" class="btn btn-outline-secondary mr-2" placement="bottom"
+        ngbPopover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." popoverTitle="Popover on bottom">
+  Popover on bottom
+</button>
+
+<button type="button" class="btn btn-outline-secondary mr-2" placement="left"
+        ngbPopover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." popoverTitle="Popover on left">
+  Popover on left
+</button>
+<button type="button" class="btn btn-outline-secondary" ngbPopover="You see, I show up on hover!" triggers="mouseenter:mouseleave" popoverTitle="Pop title">
+  Hover over me!
+</button>
+
+<hr>
+<p>
+  Alternatively you can take full manual control over popover opening / closing events.
+</p>
+
+<button type="button" class="btn btn-outline-secondary mr-2" ngbPopover="What a great tip!" triggers="manual" #p="ngbPopover" (click)="p.open()" popoverTitle="Pop title">
+  Click me to open a popover
+</button>
+<button type="button" class="btn btn-outline-secondary mr-2" (click)="p.close()">
+  Click me to close a popover
+</button>
+<div class="row">
+  <div class="col">
+    <div ngbDropdown class="d-inline-block">
+      <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Toggle dropdown</button>
+      <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+        <button class="dropdown-item">Action - 1</button>
+        <button class="dropdown-item">Another Action</button>
+        <button class="dropdown-item">Something else is here</button>
+      </div>
+    </div>
+  </div>
+
+  <button type="button" class="btn btn-outline-secondary mr-2" placement="top" ngbTooltip="Tooltip on top">
+    Tooltip on top
+  </button>
+  <button type="button" class="btn btn-outline-secondary mr-2" placement="right" ngbTooltip="Tooltip on right">
+    Tooltip on right
+  </button>
+  <button type="button" class="btn btn-outline-secondary mr-2" placement="bottom" ngbTooltip="Tooltip on bottom">
+    Tooltip on bottom
+  </button>
+  <button type="button" class="btn btn-outline-secondary mr-2" placement="left" ngbTooltip="Tooltip on left">
+    Tooltip on left
+  </button>
+  

@@ -1,0 +1,60 @@
+
+
+
+
+<label>CLASS </label>
+  <select (change)="fetchsection($event.target.value)" name="Class" id="class" ngModel >
+      <option value="0">CLASSES</option>
+      <option *ngFor="let classes of class" value={{classes.classes.classname}}>
+          {{classes.classes.classname}}
+      </option>
+  </select><br>
+
+
+  <label>SECTION</label>
+  <select name="Section" ngModel id="section">
+      <option value="0">SECTIONS</option>
+      <option *ngFor="let sections of section" value={{sections}} >
+          {{sections}}
+      </option>
+  </select><br>
+  From Date:<input id="date" type="date" ngModel>
+To Date:<input id="date1" type="date" ngModel><br>
+
+
+  <button (click)="GetSelectedItem('section','class','date','date1');">Get Selected Item</button>
+  <div class="dot">5</div>
+  
+
+<div>
+    <canvas
+        baseChart
+        [chartType]="'pie'"
+        [datasets]="pieChartData"
+        [labels]="pieChartLabels"
+        [options]="pieChartOptions"
+        [legend]="true"
+        [colors]="pieChartColor"
+        (chartClick)="tonChartClick($event)">
+    </canvas>
+  </div>
+  <div>
+
+  <table id="myInput">
+
+    <tr class="header">
+        <th style="width:60%;">Student_Id</th>
+        <th style ="width:40%;">Percentage</th>
+
+      </tr>
+     
+     
+<tr *ngFor="let teachers of ku"  [@itemAnim]>
+    
+    <td >{{teachers.stid}}</td>
+    <td>{{teachers.per}}&#8453;</td>
+    </tr>
+    
+    </table></div>
+    
+    
